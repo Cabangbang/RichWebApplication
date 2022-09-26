@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+  </head>
+
+  <body>
+    <div class="container">
+      <h2>ADD</h2>
+      <input
+        type="text"
+        id="title"
+        autocomplete="off"
+        placeholder="Task name"
+      />
+      <br />
+      <input
+        id="description"
+        autocomplete="off"
+        placeholder="Description"
+        name="description"
+        type="text"
+      />
+      <br />
+
+      <select id="colour" name="colour">
+        <option vaaue="red" selected>Red</option>
+        <option value="blue">Blue</option>
+        <option value="yellow">Yellow</option>
+      </select>
+
+      <div id="button">
+        <button id="add-btn">Save</button>
+      </div>
+
+      <div id="notes-area">
+        <h2>Notes</h2>
+        <ul id="notes"></ul>
+      </div>
+    </div>
+    <script src="problem-3.js"></script>
+  </body>
+</html>
