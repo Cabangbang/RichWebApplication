@@ -1,0 +1,23 @@
+.wrapper {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.grid-item {
+  height: 100px;
+  flex-grow: 0.25;
+  border: 1px solid;
+  text-align: center;
+}
+
+@media (max-width: 720px) {
+  .grid-item {
+    width: calc(50% - 2px);
+  }
+}
+
+@media (max-width: 360px) {
+  .grid-item {
+    width: calc(100% - 2px);
+  }
+}
