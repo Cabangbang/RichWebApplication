@@ -1,35 +1,51 @@
-var id = 0;
+let id = 0; // variable to create unique id
 document.getElementById("Add").addEventListener("click", addNote);
 
 function addNote() {
   const text = document.getElementById("title").value;
   const desc = document.getElementById("description").value;
-  var notediv = document.createElement("div");
-  var notep = document.createElement("p");
-  let editBtn = document.createElement("button");
+  const colour = document.getElementById("colour");
+  let notediv = document.createElement("div");
+  let noteh = document.createElement("h2");
+  let notep = document.createElement("p");
+
   let delBtn = document.createElement("button");
+  // creating buttons and setting variables
+
+  let newcolour = colour.options[colour.selectedIndex].value;
 
   notediv.id = "note_div" + id;
+  noteh.id = "note_h" + id;
   notep.id = "note_p" + id;
+  // setting the id for the div,header and paragraph
 
-  editBtn.id = "editBtn" + id;
   delBtn.id = "delBtn" + id;
-  id++;
+  //setting the id for the buttons
 
-  notediv.innerHTML = text;
+  noteh.innerHTML = text;
   notep.innerHTML = desc;
-  editBtn.innerHTML = "Edit";
   delBtn.innerHTML = "Delete";
+  //applying the test to the buttons and header/paragaraph
 
+  //   appending the div inside the note area div
   document.getElementById("notesArea").appendChild(notediv);
-  notediv.contentEditable = true;
-  document.getElementById("notesArea").appendChild(notep);
-  document.getElementById("notesArea").appendChild(editBtn);
-  document.getElementById("notesArea").appendChild(delBtn);
-}
-document.getElementById("delBtn").addEventListener("click", deleteNote);
 
-function deleteNote() {
-  const parent = document.getElementById("notesArea");
-  parent.removeChild(parent.firstElementChild);
+  //setting the colour for the div
+  document.getElementById("note_div" + id).style.backgroundColor = newcolour;
+
+  // appending the header and paragraph into the created not div
+  document.getElementById("note_div" + id).appendChild(noteh);
+  document.getElementById("note_div" + id).appendChild(notep);
+  noteh.contentEditable = true;
+  notep.contentEditable = true; //setting the paragraph and title to editable
+
+  //appending the buttons to the created note div
+
+  document.getElementById("note_div" + id).appendChild(delBtn);
+  document.getElementById("delBtn" + id).addEventListener("click", deleteNote);
+  //delete function
+  function deleteNote() {
+    document.getElementById("notesArea").removeChild(notediv);
+  }
+  id++; //increasing the variable that sets the id for earch div,header,buttons and paragraph
 }
