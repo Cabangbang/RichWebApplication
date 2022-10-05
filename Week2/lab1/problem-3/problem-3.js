@@ -15,8 +15,16 @@ function addNote() {
   let newcolour = colour.options[colour.selectedIndex].value;
 
   notediv.id = "note_div" + id;
+  notediv.style.padding = "20px";
+  notediv.style.margin = "10px";
+  notediv.style.width = "250px";
+  notediv.style.float = "left";
+
   noteh.id = "note_h" + id;
   notep.id = "note_p" + id;
+  noteh.style.textAlign = "center";
+  notep.style.textAlign = "center";
+
   // setting the id for the div,header and paragraph
 
   delBtn.id = "delBtn" + id;
