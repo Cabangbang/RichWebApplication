@@ -1,4 +1,4 @@
-This chrome extension replaces images with amongus charaCters twerking
+This chrome extension replaces images with gifs of amongus charaCters twerking
 
 The text is also changed:
 
