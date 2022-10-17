@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="Problem1.css" />
+  </head>
+
+  <body>
+    <div class="container">
+      <h2>ADD</h2>
+      <input type="text" id="contact_name" placeholder="Contact Name" />
+      <input id="mobile_no" placeholder="Mobile Number" type="text" />
+      <input id="email" placeholder="Email" type="email" />
+
+      <input type="button" id="Add" onClick="addRow()" value="Add Contact"></input>
+      <hr />
+    </div>
+    
+    <h2>Search Contact by Mobile Number</h2>
+    <input type="text" id="myInput" onkeyup="myFunction()">
+    <br><br><br>
+    
+    <table id="table" cellspacing="0">
+      <tr>
+        <th>Name</th>
+        <th>Mobile</th>
+        <th>Email</th>
+      </tr>
+    </table>
+
+    <script src="Problem-1.js"></script>
+  </body>
+</html>
