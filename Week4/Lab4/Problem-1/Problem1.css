@@ -8,3 +8,8 @@ td {
   padding: 8px;
   border: 1px solid black;
 }
+
+#error {
+  border: 1px solid black;
+  background-color: blue;
+}

@@ -12,21 +12,25 @@
       <input id="mobile_no" placeholder="Mobile Number" type="text" />
       <input id="email" placeholder="Email" type="email" />
 
-      <input type="button" id="Add" onClick="addRow()" value="Add Contact"></input>
+      <input type="button" id="Add" onClick="addRow()" value="Add Contact" />
       <hr />
     </div>
-    
+
     <h2>Search Contact by Mobile Number</h2>
-    <input type="text" id="myInput" onkeyup="myFunction()">
-    <br><br><br>
-    
+    <input type="text" id="myInput" onkeyup="myFunction()" />
+    <br /><br /><br />
+
     <table id="table" cellspacing="0">
       <tr>
-        <th>Name</th>
+        <th onclick="sortTable(0)">Name</th>
         <th>Mobile</th>
         <th>Email</th>
       </tr>
     </table>
+
+    <div id="error">
+      <h2>Error area</h2>
+    </div>
 
     <script src="Problem-1.js"></script>
   </body>
