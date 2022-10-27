@@ -1,4 +1,3 @@
-id = 0;
 function addRow() {
   const table = document.getElementById("table");
   const row = document.createElement("tr");
@@ -12,16 +11,21 @@ function addRow() {
   const numbformat = new RegExp("^[0-9]+$");
   const errormsg = document.createElement("h2");
   const error = document.getElementById("error");
-  errormsg.id = "errormsg" + id;
-  errormsg.innerHTML = "Error";
-  id++;
+  errormsg.id = "errormsg";
+  const delerrormsg = document.getElementById("errormsg");
+
   // errormsg.id.remove();
   td1.innerHTML = document.getElementById("contact_name").value;
   td2.innerHTML = document.getElementById("mobile_no").value;
   td3.innerHTML = document.getElementById("email").value;
 
   if (name.value.length <= 20 && name.value.length > 0) {
-    alert("works");
+    if (error.contains(delerrormsg)) {
+      delerrormsg.remove();
+    } else {
+      alert("works");
+    }
+
     if (numb.value.length == 10 && numb.value.match(numbformat)) {
       alert("works2");
       if (mail.value.length < 40 && mail.value.match(mailformat)) {
