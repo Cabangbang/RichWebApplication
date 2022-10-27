@@ -11,10 +11,10 @@ function addRow() {
   const numbformat = new RegExp("^[0-9]+$");
   const errormsg = document.createElement("h2");
   const error = document.getElementById("error");
-  errormsg.id = "errormsg";
+  errormsg.id = "errormsg"; //? assigning the cost with an id
   const delerrormsg = document.getElementById("errormsg");
 
-  // errormsg.id.remove();
+  //? assign values
   td1.innerHTML = document.getElementById("contact_name").value;
   td2.innerHTML = document.getElementById("mobile_no").value;
   td3.innerHTML = document.getElementById("email").value;
@@ -27,9 +27,9 @@ function addRow() {
     }
 
     if (numb.value.length == 10 && numb.value.match(numbformat)) {
-      alert("works2");
+      console.log("works");
       if (mail.value.length < 40 && mail.value.match(mailformat)) {
-        alert("works3");
+        console.log("works");
         row.appendChild(td1);
         row.appendChild(td2);
         row.appendChild(td3);
@@ -46,6 +46,7 @@ function addRow() {
     errormsg.innerHTML = "Error! invalid name";
     error.appendChild(errormsg);
   }
+  //!Removes the text in the fields
   name.value = "";
   numb.value = "";
   mail.value = "";
@@ -82,7 +83,7 @@ function sortTable(n) {
     switchcount = 0;
   table = document.getElementById("table");
   switching = true;
-  //Set the sorting direction to ascending:
+  //*Set the sorting direction to ascending:
   dir = "asc";
   /*Make a loop that will continue until
   no switching has been done:*/
