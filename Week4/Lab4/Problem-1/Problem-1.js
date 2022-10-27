@@ -23,7 +23,7 @@ function addRow() {
     if (error.contains(delerrormsg)) {
       delerrormsg.remove();
     } else {
-      alert("works");
+      console.log("works");
     }
 
     if (numb.value.length == 10 && numb.value.match(numbformat)) {
