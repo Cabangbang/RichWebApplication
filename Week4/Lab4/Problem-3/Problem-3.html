@@ -6,67 +6,65 @@
   </head>
 
   <body>
-    <input type="text" id="contact_name" placeholder="Contact Name" />
-
-    <input type="button" id="Add" onClick="addRow()" value="Add Contact" />
-    <br /><br />
-
     <div class="container">
-      <div class="profile">
-        <img id="profilePicture" src="https://i.stack.imgur.com/frlIf.png" />
-        <h4>NAME:</h4>
-        <h4>USERNAME:</h4>
-        <h4>EMAIL:</h4>
-        <h4>LOCATIPON:</h4>
-        <h4>NUMBER OF GITS:</h4>
+      <input
+        type="text"
+        name=""
+        id="username"
+        placeholder="Enter Username"
+        autocomplete="off"
+      />
+
+      <button class="button" onClick="getUsers()">Search</button>
+      <div id="profile">
+        <div class="information">
+          <div id="profilePicture"></div>
+        </div>
+        <div class="information">
+          <h4 id="name">NAME:</h4>
+        </div>
+        <div class="information">
+          <h4 id="login">USERNAME:</h4>
+        </div>
+        <div class="information">
+          <h4 id="email">EMAIL:</h4>
+        </div>
+        <div class="information">
+          <h4 id="location">LOCATION:</h4>
+        </div>
+        <div class="information">
+          <h4 id="gist">NUMBER OF GISTS:</h4>
+        </div>
       </div>
 
       <div id="userRepos">
-        <div style="background-color: green; color: white">
-          <span class="text">Name</span>
-          <span class="text">Description</span>
-          <span class="icon">
-            <i class="material-icons">computer</i>
-          </span>
+        <div id="repos">
+          <h4 class="text">Name</h4>
+          <h4 class="Description">Description</h4>
         </div>
-        <div style="background-color: white; color: green">
-          <span class="text">Name</span>
-          <span class="text">Description</span>
-          <span class="icon">
-            <i class="material-icons">computer</i>
-          </span>
+        <div class="repos">
+          <h4 class="text">Name</h4>
+          <h4 class="Description">Description</h4>
         </div>
-        <div style="background-color: green; color: white">
-          <span class="text">Name</span>
-          <span class="text">Description</span>
-          <span class="icon">
-            <i class="material-icons">computer</i>
-          </span>
+        <div class="repos">
+          <h4 class="text">Name</h4>
+          <h4 class="Description">Description</h4>
         </div>
-        <div style="background-color: green; color: white">
-          <span class="text">Name</span>
-          <span class="text">Description</span>
-          <span class="icon">
-            <i class="material-icons">computer</i>
-          </span>
+        <div class="repos">
+          <h4 class="text">Name</h4>
+          <h4 class="Description">Description</h4>
         </div>
-        <div style="background-color: green; color: white">
-          <span class="text">Name</span>
-          <span class="text">Description</span>
-          <span class="icon">
-            <i class="material-icons">computer</i>
-          </span>
+        <div class="repos">
+          <h4 class="text">Name</h4>
+          <h4 class="Description">Description</h4>
         </div>
-        <div style="background-color: green; color: white">
-          <span class="text">Name</span>
-          <span class="text">Description</span>
-          <span class="icon">
-            <i class="material-icons">computer</i>
-          </span>
+        <div class="repos">
+          <h4 class="text">Name</h4>
+          <h4 class="Description">Description</h4>
         </div>
       </div>
     </div>
 
-    <script src="Problem-3.css"></script>
+    <script src="Problem-3.js"></script>
   </body>
 </html>
