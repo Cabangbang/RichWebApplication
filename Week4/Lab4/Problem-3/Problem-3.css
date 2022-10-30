@@ -3,6 +3,7 @@
   margin: 0 20% 0 20%;
   grid-template-columns: 1fr 1fr;
   grid-gap: 20px 50px;
+  height: 500px;
 }
 
 .button {
@@ -10,7 +11,7 @@
   color: green;
   padding: 20px;
   text-align: center;
-
+  display: block;
   border-radius: 12px;
 }
 
@@ -33,6 +34,7 @@ h4 {
   border-bottom: 1px solid black;
 }
 
-.repos {
+#userRepos {
   border: 1px solid black;
+  display: block;
 }
