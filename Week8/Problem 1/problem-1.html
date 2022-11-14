@@ -1,5 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
+  <script
+    type="text/javascript"
+    src="https://npmcdn.com/@reactivex/rxjs@5.0.0-beta.7/dist/global/Rx.umd.js"
+  ></script>
   <head>
     <meta charset="UTF-8" />
     <link
@@ -11,6 +15,24 @@
   </head>
 
   <body>
-    <script type="module" src="problem-1.js"></script>
+    <div class="container">
+      <h2>ADD</h2>
+      <input type="text" id="title" placeholder="Title" />
+      <input id="description" placeholder="Description" type="text" />
+      <select id="colour">
+        <option id="Red">Red</option>
+        <option id="Blue">Blue</option>
+        <option id="Green">Green</option>
+      </select>
+
+      <button id="Add">Add Note</button>
+      <hr />
+    </div>
+
+    <div id="notesArea">
+      <h2>Notes</h2>
+    </div>
+
+    <script src="problem-2.js"></script>
   </body>
 </html>
