@@ -8,8 +8,12 @@ const addNote = {
     let notediv = document.createElement("div");
     let noteh = document.createElement("h2");
     let notep = document.createElement("p");
+    let tempp = document.createElement("p");
+    tempp.innerHTML = "New Child";
+    tempp.contentEditable = true;
 
     let delBtn = document.createElement("button");
+    let extraBtn = document.createElement("button");
     // creating buttons and setting variables
 
     let newcolour = colour.options[colour.selectedIndex].value;
@@ -26,13 +30,14 @@ const addNote = {
     notep.style.textAlign = "center";
 
     // setting the id for the div,header and paragraph
-
+    extraBtn.id = "extraBtn" + id;
     delBtn.id = "delBtn" + id;
     //setting the id for the buttons
 
     noteh.innerHTML = text;
     notep.innerHTML = desc;
     delBtn.innerHTML = "Delete";
+    extraBtn.innerHTML = "Add Child";
     //applying the test to the buttons and header/paragaraph
 
     //   appending the div inside the note area div
@@ -50,6 +55,7 @@ const addNote = {
     //appending the buttons to the created note div
 
     document.getElementById("note_div" + id).appendChild(delBtn);
+    document.getElementById("note_div" + id).appendChild(extraBtn);
 
     const delNote = {
       next: function () {
@@ -59,6 +65,18 @@ const addNote = {
 
     var Observable = Rx.Observable.fromEvent(delBtn, "click");
     Observable.subscribe(delNote);
+
+    const extraNote = {
+      next: function () {
+        let tempp = document.createElement("p");
+        tempp.innerHTML = "New Child";
+        tempp.contentEditable = true;
+        document.getElementById("note_div" + (id - 1)).appendChild(tempp);
+      },
+    };
+
+    var Observable = Rx.Observable.fromEvent(extraBtn, "click");
+    Observable.subscribe(extraNote);
     id++; //increasing the variable that sets the id for earch div,header,buttons and paragraph
   },
 };
