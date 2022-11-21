@@ -1,0 +1,26 @@
+button {
+  display: block;
+  width: 100px;
+  height: 50px;
+
+  margin-left: auto;
+  margin-right: auto;
+}
+
+input[type="number"] {
+  align-self: center;
+  border: 2px solid black;
+  background-color: lightblue;
+  width: 100px;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  height: 100px;
+}
+
+.container {
+  border: 1px solid black;
+  margin: auto;
+  width: 50%;
+  padding: 10px;
+}
