@@ -61,10 +61,10 @@ const addNote = {
       next: function () {
         document.getElementById("notesArea").removeChild(notediv);
       },
-    };
+    }; // deletes the note from the note area
 
     var Observable = Rx.Observable.fromEvent(delBtn, "click");
-    Observable.subscribe(delNote);
+    Observable.subscribe(delNote); // subscribes the function
 
     const extraNote = {
       next: function () {
@@ -73,10 +73,11 @@ const addNote = {
         tempp.contentEditable = true;
         document.getElementById("note_div" + (id - 1)).appendChild(tempp);
       },
-    };
+    }; //create a new child in the note div
 
     var Observable = Rx.Observable.fromEvent(extraBtn, "click");
-    Observable.subscribe(extraNote);
+    Observable.subscribe(extraNote); // subscribes the function
+
     id++; //increasing the variable that sets the id for earch div,header,buttons and paragraph
   },
 };
