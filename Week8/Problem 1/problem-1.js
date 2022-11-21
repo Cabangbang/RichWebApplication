@@ -50,13 +50,15 @@ const addNote = {
     //appending the buttons to the created note div
 
     document.getElementById("note_div" + id).appendChild(delBtn);
-    document
-      .getElementById("delBtn" + id)
-      .addEventListener("click", deleteNote);
-    //delete function
-    function deleteNote() {
-      document.getElementById("notesArea").removeChild(notediv);
-    }
+
+    const delNote = {
+      next: function () {
+        document.getElementById("notesArea").removeChild(notediv);
+      },
+    };
+
+    var Observable = Rx.Observable.fromEvent(delBtn, "click");
+    Observable.subscribe(delNote);
     id++; //increasing the variable that sets the id for earch div,header,buttons and paragraph
   },
 };
