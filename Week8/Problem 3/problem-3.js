@@ -44,18 +44,18 @@ const addNote = {
     document.getElementById("notesArea").appendChild(notediv);
 
     //setting the colour for the div
-    document.getElementById("note_div" + id).style.backgroundColor = newcolour;
+    document.getElementById(notediv.id).style.backgroundColor = newcolour;
 
     // appending the header and paragraph into the created not div
-    document.getElementById("note_div" + id).appendChild(noteh);
-    document.getElementById("note_div" + id).appendChild(notep);
+    document.getElementById(notediv.id).appendChild(noteh);
+    document.getElementById(notediv.id).appendChild(notep);
     noteh.contentEditable = true;
     notep.contentEditable = true; //setting the paragraph and title to editable
 
     //appending the buttons to the created note div
 
-    document.getElementById("note_div" + id).appendChild(delBtn);
-    document.getElementById("note_div" + id).appendChild(extraBtn);
+    document.getElementById(notediv.id).appendChild(delBtn);
+    document.getElementById(notediv.id).appendChild(extraBtn);
 
     const delNote = {
       next: function () {
@@ -71,7 +71,7 @@ const addNote = {
         let tempp = document.createElement("p");
         tempp.innerHTML = "New Child";
         tempp.contentEditable = true;
-        document.getElementById("note_div" + (id - 1)).appendChild(tempp);
+        document.getElementById(notediv.id).appendChild(tempp);
       },
     }; //create a new child in the note div
 
