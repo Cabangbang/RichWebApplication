@@ -22,7 +22,7 @@ const addNote = {
     notediv.style.padding = "20px";
     notediv.style.margin = "10px";
     notediv.style.width = "250px";
-    notediv.style.float = "left";
+    notediv.style.float = "left"; // Styling the div
 
     noteh.id = "note_h" + id;
     notep.id = "note_p" + id;
