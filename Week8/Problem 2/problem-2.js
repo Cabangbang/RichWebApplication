@@ -18,11 +18,13 @@ const startTimer = {
     startCount = Rx.Observable.interval(1000)
       .map((count) => totaltime - count)
       .subscribe((seconds) => {
-        var time = String(seconds / 3600);
+        var time = String(seconds / 3600); //gets the new time
         var now = new Date(0, 0);
         now.setSeconds(+time * 60 * 60);
+
         timerDisplay.innerHTML = now.toTimeString().slice(0, 8);
-        timerDisplay.style.fontSize = "20px";
+        timerDisplay.style.fontSize = "80px"; //! set the font size
+
         if (time == 0) {
           timerDisplay.innerHTML = "Time is up";
           startCount.unsubscribe();
