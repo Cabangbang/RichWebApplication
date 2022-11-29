@@ -1,4 +1,5 @@
 let id = 0; // variable to create unique id
+let id_2 = 0; // variable to create unique id
 const add = document.getElementById("Add");
 const addNote = {
   next: function () {
@@ -13,7 +14,7 @@ const addNote = {
     tempp.contentEditable = true;
 
     let delBtn = document.createElement("button");
-    let extraBtn = document.createElement("button");
+    let newChildBtn = document.createElement("button");
     // creating buttons and setting variables
 
     let newcolour = colour.options[colour.selectedIndex].value;
@@ -30,14 +31,14 @@ const addNote = {
     notep.style.textAlign = "center";
 
     // setting the id for the div,header and paragraph
-    extraBtn.id = "extraBtn" + id;
+    newChildBtn.id = "newChildBtn" + id;
     delBtn.id = "delBtn" + id;
     //setting the id for the buttons
 
     noteh.innerHTML = text;
     notep.innerHTML = desc;
     delBtn.innerHTML = "Delete";
-    extraBtn.innerHTML = "Add Child";
+    newChildBtn.innerHTML = "Add Child";
     //applying the test to the buttons and header/paragaraph
 
     //   appending the div inside the note area div
@@ -55,32 +56,57 @@ const addNote = {
     //appending the buttons to the created note div
 
     document.getElementById(notediv.id).appendChild(delBtn);
-    document.getElementById(notediv.id).appendChild(extraBtn);
+    document.getElementById(notediv.id).appendChild(newChildBtn);
 
     const delNote = {
       next: function () {
         document.getElementById("notesArea").removeChild(notediv);
+        delObservable.unsubscribe;
       },
     }; // deletes the note from the note area
 
-    var Observable = Rx.Observable.fromEvent(delBtn, "click");
-    Observable.subscribe(delNote); // subscribes the function
+    var delObservable = Rx.Observable.fromEvent(delBtn, "click");
+    delObservable.subscribe(delNote); // subscribes the function
 
-    const extraNote = {
+    const newChildNote = {
       next: function () {
-        let tempp = document.createElement("p");
-        tempp.innerHTML = "New Child";
-        tempp.contentEditable = true;
-        document.getElementById(notediv.id).appendChild(tempp);
+        let newChild = document.createElement("div");
+        let delChildBtn = document.createElement("button");
+        let newChildP = document.createElement("p");
+        newChild.id = "newChild" + id_2;
+
+        delChildBtn.innerHTML = "delete child";
+
+        newChildP.innerHTML = "This is a New Child";
+        newChildP.contentEditable = true;
+
+        document.getElementById(notediv.id).appendChild(newChild);
+        document.getElementById(newChild.id).appendChild(newChildP);
+        document.getElementById(newChild.id).appendChild(delChildBtn);
+
+        const delChild = {
+          next: function () {
+            document.getElementById(notediv.id).removeChild(newChild);
+            delnewChildObservable.unsubscribe;
+          },
+        }; // deletes the child from the note
+
+        const delnewChildObservable = Rx.Observable.fromEvent(
+          delChildBtn,
+          "click"
+        );
+        delnewChildObservable.subscribe(delChild); // subscribes the function
+
+        id_2++;
       },
     }; //create a new child in the note div
 
-    var Observable = Rx.Observable.fromEvent(extraBtn, "click");
-    Observable.subscribe(extraNote); // subscribes the function
+    var newChildObservable = Rx.Observable.fromEvent(newChildBtn, "click");
+    newChildObservable.subscribe(newChildNote); // subscribes the function
 
     id++; //increasing the variable that sets the id for earch div,header,buttons and paragraph
   },
 };
 
-var Observable = Rx.Observable.fromEvent(add, "click");
-Observable.subscribe(addNote);
+var addObservable = Rx.Observable.fromEvent(add, "click");
+addObservable.subscribe(addNote);
