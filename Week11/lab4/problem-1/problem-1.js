@@ -1,6 +1,9 @@
 let id = 0; // variable to create unique id
 document.getElementById("Add").addEventListener("click", addNote);
 
+function Item(props) {
+  return <p>{props.text}</p>;
+}
 function addNote() {
   const text = document.getElementById("title").value;
   const desc = document.getElementById("description").value;
@@ -57,18 +60,3 @@ function addNote() {
   }
   id++; //increasing the variable that sets the id for earch div,header,buttons and paragraph
 }
-
-// class ShoppingList extends React.Component {
-//   render() {
-//     return (
-//       <div className="shopping-list">
-//         <h1>Shopping List for {this.props.name}</h1>
-//         <ul>
-//           <li>Instagram</li>
-//           <li>WhatsApp</li>
-//           <li>Oculus</li>
-//         </ul>
-//       </div>
-//     );
-//   }
-// }
